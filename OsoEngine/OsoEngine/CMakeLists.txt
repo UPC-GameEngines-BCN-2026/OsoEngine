@@ -6,6 +6,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
 find_package(glm CONFIG REQUIRED)
+find_package(SDL3 CONFIG REQUIRED)
+find_package(glad CONFIG REQUIRED)
+
 # Agregue un origen al ejecutable de este proyecto.
 add_executable (OsoEngine "OsoEngine.cpp" "OsoEngine.h")
 
@@ -15,5 +18,8 @@ endif()
 
 target_link_libraries(OsoEngine PRIVATE
     glm::glm
+    SDL3::SDL3
+    glad::glad
+
 )
 # TODO: Agregue pruebas y destinos de instalación si es necesario.
