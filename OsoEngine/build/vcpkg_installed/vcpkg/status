@@ -1,0 +1,98 @@
+Package: vcpkg-cmake-config
+Version: 2026-07-21
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 1ce3ec39d11f02e363402d580af4ae621036decb38e72036c4d51a492d8711de
+Status: install ok installed
+
+Package: vcpkg-cmake
+Version: 2025-08-07
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 429a4d78fb5b0d086d890b7521326f2aa4d65dc24cb450e58a99aea3ae41f79f
+Status: install ok installed
+
+Package: egl-registry
+Version: 2025-05-27
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 3af3a087505e35d2abd68818dd45262102afe8b036a65fc384f93a3806fde94e
+Description: EGL API and Extension Registry
+Status: install ok installed
+
+Package: opengl-registry
+Version: 2026-08-03
+Depends: egl-registry
+Architecture: x64-windows
+Multi-Arch: same
+Abi: cba240c5e6db4fba3a7a58ab24282cdde4ee9f900d7270e25ea6ed898165634c
+Description: OpenGL, OpenGL ES, and OpenGL ES-SC API and Extension Registry
+Status: install ok installed
+
+Package: glad
+Version: 0.1.36
+Depends: egl-registry, opengl-registry, vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: b33fb7b29d8589156c47d8e1247b80c8397405059c82f36d08704151176ff1ff
+Description: Multi-Language Vulkan/GL/GLES/EGL/GLX/WGL Loader-Generator based on the official specs.
+Default-Features: loader
+Status: install ok installed
+
+Package: glad
+Feature: loader
+Architecture: x64-windows
+Multi-Arch: same
+Description: Generate loader logic.
+Status: install ok installed
+
+Package: glm
+Version: 1.0.3
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: 7e7dae27ef7dc132063f49e6d1bec2d873f65daa256b400d3feaac442d1e473d
+Description: OpenGL Mathematics (GLM)
+Status: install ok installed
+
+Package: sdl3
+Version: 3.4.16
+Port-Version: 1
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: e37c3cfda611982d0ba5fde3052321261f1a667c5435fdcee77e55a108fd1a6c
+Description: Simple DirectMedia Layer is a cross-platform development library designed to provide low level access to audio, keyboard, mouse, joystick, and graphics hardware via OpenGL and Direct3D.
+Status: install ok installed
+
+Package: imgui
+Version: 1.92.9
+Depends: vcpkg-cmake, vcpkg-cmake-config
+Architecture: x64-windows
+Multi-Arch: same
+Abi: c3b033e045ccdef68aac4a747741cf50c365ddb14bf3f0d1e85e07e8b32579cf
+Description: Bloat-free Immediate Mode Graphical User interface for C++ with minimal dependencies.
+Status: install ok installed
+
+Package: imgui
+Feature: docking-experimental
+Architecture: x64-windows
+Multi-Arch: same
+Description: Build with docking support
+Status: install ok installed
+
+Package: imgui
+Feature: opengl3-binding
+Architecture: x64-windows
+Multi-Arch: same
+Description: Make available OpenGL3/ES/ES2 (modern) binding
+Status: install ok installed
+
+Package: imgui
+Feature: sdl3-binding
+Depends: sdl3
+Architecture: x64-windows
+Multi-Arch: same
+Description: Make available SDL3 binding
+Status: install ok installed
+

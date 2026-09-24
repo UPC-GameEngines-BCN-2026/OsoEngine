@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/cmake_install.cmake",
+		"C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/OsoEngine/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

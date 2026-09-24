@@ -1,0 +1,18 @@
+# CMake generation dependency list for this directory.
+C:/Program Files/Microsoft Visual Studio/18/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/CMake/share/cmake-4.3/Modules/FeatureSummary.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/OsoEngine/CMakeLists.txt
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glad/gladConfig.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glad/gladConfigVersion.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glad/gladTargets-debug.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glad/gladTargets-release.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glad/gladTargets.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glm/glmConfig-debug.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glm/glmConfig-release.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glm/glmConfig.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/glm/glmConfigVersion.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/sdl3/SDL3Config.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/sdl3/SDL3ConfigVersion.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/sdl3/SDL3headersTargets.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-debug.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets-release.cmake
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/vcpkg_installed/x64-windows/share/sdl3/SDL3sharedTargets.cmake

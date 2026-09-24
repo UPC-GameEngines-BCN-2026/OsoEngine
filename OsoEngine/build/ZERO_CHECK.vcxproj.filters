@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="18.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\Usuario\source\repos\OsoEngine\OsoEngine\build\CMakeFiles\6aac679acd62f04358cfd7347494c1db\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{A2BF709F-C9EB-3E66-8BE0-8F6DB07C34E2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

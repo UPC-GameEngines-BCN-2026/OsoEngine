@@ -22,6 +22,7 @@ int main()
         return 1;
     }
 
+
     //Configurar OpenGL
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 6);

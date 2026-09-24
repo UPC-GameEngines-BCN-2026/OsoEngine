@@ -4,6 +4,14 @@
   "dependencies": [
     "glm",
     "sdl3",
-    "glad"
+    "glad" ,
+    {
+      "name": "imgui",
+      "features": [
+        "sdl3-binding",
+        "opengl3-binding",
+        "docking-experimental"
+      ]
+    }
   ]
 }

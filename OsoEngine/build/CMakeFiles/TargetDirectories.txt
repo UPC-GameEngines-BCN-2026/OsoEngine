@@ -1,0 +1,3 @@
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Usuario/source/repos/OsoEngine/OsoEngine/build/OsoEngine/CMakeFiles/OsoEngine.dir
