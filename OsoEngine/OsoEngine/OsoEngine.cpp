@@ -98,7 +98,42 @@ bool running = true;
         ImGui_ImplSDL3_NewFrame();
         ImGui::NewFrame();
 
-        if (ImGui::BeginMainMenuBar())
+        ImGui::SetNextWindowPos(ImVec2(0, 0));
+        ImGui::SetNextWindowSize(ImVec2(io.DisplaySize.x * 0.5f, io.DisplaySize.y));
+
+        ImGui::Begin("MenuBarVentana", nullptr,
+            ImGuiWindowFlags_NoTitleBar |
+            ImGuiWindowFlags_MenuBar);
+
+        bool showAbout = false;
+        if (showAbout)
+        {
+            ImGui::Begin("About OsoEngine", &showAbout);
+
+            ImGui::Text("Oso");
+            ImGui::Text("Version 0.1.0");
+            ImGui::Text("Heavyweight 3D performance. Unrestricted creativity.");
+            ImGui::Text("By: David Garcia, Oscar & Sofia");
+            ImGui::Separator();
+
+            ImGui::Text("Libraries used:");
+            ImGui::BulletText("SDL3");
+            ImGui::BulletText("GLAD");
+            ImGui::BulletText("GLM");
+            ImGui::BulletText("Dear ImGui");
+            ImGui::Separator();
+
+            ImGui::Text("License");
+            ImGui::Text("MIT License");
+            ImGui::Text("Copyright (c) 2026 David Garcia, Oscar & Sofia");
+            ImGui::Text("Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and /or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions : ");
+            ImGui::Text("The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.");
+            ImGui::Text("THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.");
+
+            ImGui::End();
+        }
+
+        if (ImGui::BeginMenuBar())
         {
             if (ImGui::BeginMenu("File"))
             {
@@ -110,12 +145,26 @@ bool running = true;
             }
             if (ImGui::MenuItem("View"))
             {
-                
                 ImGui::EndMenu();
             }
             if (ImGui::BeginMenu("Help"))
             {
-                ImGui::MenuItem("About");
+                if (ImGui::MenuItem("GitHub Documentation"))
+                {
+                    SDL_OpenURL("https://github.com/UPC-GameEngines-BCN-2026/OsoEngine/docs");
+                }
+                if (ImGui::MenuItem("Report a Bug"))
+                {
+                    SDL_OpenURL("https://github.com/UPC-GameEngines-BCN-2026/OsoEngine/issues");
+                }
+                if (ImGui::MenuItem("Download Latest"))
+                {
+                    SDL_OpenURL("https://github.com/UPC-GameEngines-BCN-2026/OsoEngine/releases");
+                }
+                if (ImGui::MenuItem("About"))
+                {
+                    showAbout = true;
+                }
                 ImGui::EndMenu();
             }
 
