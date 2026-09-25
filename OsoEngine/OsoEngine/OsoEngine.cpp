@@ -81,6 +81,7 @@ int main()
 
     bool running = true;
     bool showAbout = false;
+    bool showConfig = false;
 
     while (running)
     {
@@ -116,8 +117,12 @@ int main()
                 }
                 ImGui::EndMenu();
             }
-            if (ImGui::MenuItem("View"))
+            if (ImGui::BeginMenu("View"))
             {
+                if (ImGui::MenuItem("Configuration"))
+                {
+                    showConfig = true;
+                }
                 ImGui::EndMenu();
             }
             if (ImGui::BeginMenu("Help"))
@@ -142,6 +147,31 @@ int main()
             }
 
             ImGui::EndMainMenuBar();
+        }
+
+        if (showConfig)
+        {
+            ImGui::CollapsingHeader("Configuration");
+
+            if (ImGui::CollapsingHeader("Application"))
+            {
+                ImGui::Text("Engine Name: OsoEngine");
+                ImGui::Text("Version: 0.1.0");
+            }
+
+            if (ImGui::CollapsingHeader("Window"))
+            {
+                ImGui::Text("Width: %.0f", io.DisplaySize.x);
+                ImGui::Text("Height: %.0f", io.DisplaySize.y);
+            }
+
+            if (ImGui::CollapsingHeader("Hardware Info"))
+            {
+                ImGui::Text("GPU: %s", glGetString(GL_RENDERER));
+                ImGui::Text("Vendor: %s", glGetString(GL_VENDOR));
+                ImGui::Text("OpenGL Version: %s", glGetString(GL_VERSION));
+            }
+
         }
 
         if (showAbout)
