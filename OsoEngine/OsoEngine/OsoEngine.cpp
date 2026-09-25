@@ -151,27 +151,26 @@ int main()
 
         if (showConfig)
         {
-            ImGui::CollapsingHeader("Configuration");
+            ImGui::SetNextWindowPos(ImVec2(0, 20));
+            ImGui::SetNextWindowSize(ImVec2(io.DisplaySize.x * 0.5f, io.DisplaySize.y));
+            ImGui::Begin("Configuration", &showConfig);
 
             if (ImGui::CollapsingHeader("Application"))
             {
-                ImGui::Text("Engine Name: OsoEngine");
-                ImGui::Text("Version: 0.1.0");
+           
             }
 
             if (ImGui::CollapsingHeader("Window"))
             {
-                ImGui::Text("Width: %.0f", io.DisplaySize.x);
-                ImGui::Text("Height: %.0f", io.DisplaySize.y);
+            
             }
 
             if (ImGui::CollapsingHeader("Hardware Info"))
             {
-                ImGui::Text("GPU: %s", glGetString(GL_RENDERER));
-                ImGui::Text("Vendor: %s", glGetString(GL_VENDOR));
-                ImGui::Text("OpenGL Version: %s", glGetString(GL_VERSION));
+             
             }
 
+            ImGui::End();
         }
 
         if (showAbout)
