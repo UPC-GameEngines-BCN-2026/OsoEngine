@@ -146,6 +146,9 @@ int main()
 
         if (showAbout)
         {
+            ImGui::SetNextWindowPos(ImVec2(0, 20));
+            ImGui::SetNextWindowSize(ImVec2(io.DisplaySize.x * 0.5f, io.DisplaySize.y));
+            
             ImGui::Begin("About OsoEngine", &showAbout);
 
             ImGui::Text("Oso");
@@ -162,11 +165,8 @@ int main()
             ImGui::Text("Libraries used:");
             ImGui::Text(" ");
             ImGui::BulletText("SDL3");
-            ImGui::Text(" ");
             ImGui::BulletText("GLAD");
-            ImGui::Text(" ");
             ImGui::BulletText("GLM");
-            ImGui::Text(" ");
             ImGui::BulletText("Dear ImGui");
             ImGui::Text(" ");
             ImGui::Separator();
@@ -181,10 +181,12 @@ int main()
             ImGui::Text("Permission is hereby granted, free of charge, to any person obtaining a copy of this");
             ImGui::Text("software and associated documentation files (the 'Software'), to deal in the Software");
             ImGui::Text("without restriction, including without limitation the rights to use, copy, modify, merge,");
-            ImGui::Text("publish, distribute, sublicense, and /or sell copies of the Software, and to permit");
+            ImGui::Text("publish, distribute, sublicense, and/or sell copies of the Software, and to permit");
             ImGui::Text("persons to whom the Software is furnished to do so, subject to the following conditions: ");
+            ImGui::Text(" ");
             ImGui::Text("The above copyright notice and this permission notice shall be included in all copies or");
             ImGui::Text("substantial portions of the Software.");
+            ImGui::Text(" ");
             ImGui::Text("THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,");
             ImGui::Text("BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE");
             ImGui::Text("AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY");
