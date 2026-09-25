@@ -149,24 +149,48 @@ int main()
             ImGui::Begin("About OsoEngine", &showAbout);
 
             ImGui::Text("Oso");
+            ImGui::Text(" ");
             ImGui::Text("Version 0.1.0");
+            ImGui::Text(" ");
             ImGui::Text("Heavyweight 3D performance. Unrestricted creativity.");
+            ImGui::Text(" ");
             ImGui::Text("By: David Garcia, Oscar & Sofia");
+            ImGui::Text(" ");
             ImGui::Separator();
 
+            ImGui::Text(" ");
             ImGui::Text("Libraries used:");
+            ImGui::Text(" ");
             ImGui::BulletText("SDL3");
+            ImGui::Text(" ");
             ImGui::BulletText("GLAD");
+            ImGui::Text(" ");
             ImGui::BulletText("GLM");
+            ImGui::Text(" ");
             ImGui::BulletText("Dear ImGui");
+            ImGui::Text(" ");
             ImGui::Separator();
 
+            ImGui::Text(" ");
             ImGui::Text("License");
+            ImGui::Text(" ");
             ImGui::Text("MIT License");
+            ImGui::Text(" ");
             ImGui::Text("Copyright (c) 2026 David Garcia, Oscar & Sofia");
-            ImGui::Text("Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the 'Software'), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and /or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions : ");
-            ImGui::Text("The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.");
-            ImGui::Text("THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.");
+            ImGui::Text(" ");
+            ImGui::Text("Permission is hereby granted, free of charge, to any person obtaining a copy of this");
+            ImGui::Text("software and associated documentation files (the 'Software'), to deal in the Software");
+            ImGui::Text("without restriction, including without limitation the rights to use, copy, modify, merge,");
+            ImGui::Text("publish, distribute, sublicense, and /or sell copies of the Software, and to permit");
+            ImGui::Text("persons to whom the Software is furnished to do so, subject to the following conditions: ");
+            ImGui::Text("The above copyright notice and this permission notice shall be included in all copies or");
+            ImGui::Text("substantial portions of the Software.");
+            ImGui::Text("THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,");
+            ImGui::Text("BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE");
+            ImGui::Text("AND NONINFRINGEMENT.IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY");
+            ImGui::Text("CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,");
+            ImGui::Text("ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS");
+            ImGui::Text("IN THE SOFTWARE.");
 
             ImGui::End();
         }
