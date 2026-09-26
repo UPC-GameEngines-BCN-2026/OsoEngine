@@ -73,6 +73,16 @@ int main()
         return 1;
     }
 
+    //Initalize imgui
+
+    ImGui::CreateContext();
+    ImGuiIO& io = ImGui::GetIO(); (void)io;
+ 
+
+    ImGui_ImplSDL3_InitForOpenGL(window, glContext);
+    ImGui::StyleColorsDark();
+
+    ImGui_ImplOpenGL3_Init("#version 460");
 
 bool running = true;
 
@@ -82,11 +92,19 @@ bool running = true;
 
         while (SDL_PollEvent(&event))
         {
+			// Pass events to ImGui
+            ImGui_ImplSDL3_ProcessEvent(&event);
+
             if (event.type == SDL_EVENT_QUIT)
             {
                 running = false;
             }
         }
+		// Start the Dear ImGui frame
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplSDL3_NewFrame();
+        ImGui::NewFrame();
+        ImGui::ShowDemoWindow();
 
         glClearColor(
             0.1f,
@@ -97,13 +115,19 @@ bool running = true;
 
         glClear(GL_COLOR_BUFFER_BIT);
 
+		// Render ImGui
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
         SDL_GL_SwapWindow(window);
 
         SDL_Delay(16);
     }
 
     // Cleanup
-
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplSDL3_Shutdown();
+    ImGui::DestroyContext();
     SDL_GL_DestroyContext(glContext);
     SDL_DestroyWindow(window);
     SDL_Quit();

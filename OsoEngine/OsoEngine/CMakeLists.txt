@@ -14,10 +14,19 @@ find_package(imgui CONFIG REQUIRED)
 # Agregue un origen al ejecutable de este proyecto.
 add_executable (OsoEngine "OsoEngine.cpp" "OsoEngine.h")
 
+#Disable RTTI and exceptions for MSVC
+if(MSVC)
+    target_compile_options(OsoEngine PRIVATE
+        /GR-
+        /EHs-c-
+    )
+endif()
+
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET OsoEngine PROPERTY CXX_STANDARD 20)
 endif()
 
+#link libraries
 target_link_libraries(OsoEngine PRIVATE
     glm::glm
     SDL3::SDL3
