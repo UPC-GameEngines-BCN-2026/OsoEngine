@@ -74,17 +74,21 @@ int main()
     }
 
     //Initalize imgui
-
+    IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO& io = ImGui::GetIO(); (void)io;
- 
+
 
     ImGui_ImplSDL3_InitForOpenGL(window, glContext);
     ImGui::StyleColorsDark();
 
     ImGui_ImplOpenGL3_Init("#version 460");
 
-bool running = true;
+
+    //Main loop
+    bool running = true;
+    bool showConfig = true;
+    bool showAbout = false;
 
     while (running)
     {
@@ -92,7 +96,7 @@ bool running = true;
 
         while (SDL_PollEvent(&event))
         {
-			// Pass events to ImGui
+            // Pass events to ImGui
             ImGui_ImplSDL3_ProcessEvent(&event);
 
             if (event.type == SDL_EVENT_QUIT)
@@ -100,12 +104,112 @@ bool running = true;
                 running = false;
             }
         }
-		// Start the Dear ImGui frame
+        // Start the Dear ImGui frame
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplSDL3_NewFrame();
         ImGui::NewFrame();
-        ImGui::ShowDemoWindow();
+        // Create a  menu bar
+        if (ImGui::BeginMainMenuBar())
+        {
+            if (ImGui::BeginMenu("File"))
+            {
+                if (ImGui::MenuItem("Exit"))
+                {
+                    running = false;
+                }
 
+                ImGui::EndMenu();
+            }
+
+            if (ImGui::BeginMenu("View"))
+            {
+                ImGui::MenuItem("Configuration", nullptr, &showConfig);
+
+
+                ImGui::EndMenu();
+            }
+
+            if (ImGui::BeginMenu("Help"))
+            {
+                if (ImGui::MenuItem("Github Documentation"))
+                {
+                    SDL_OpenURL("https://github.com/UPC-GameEngines-BCN-2026/OsoEngine/wiki");
+                }
+
+                if (ImGui::MenuItem("Report a Bug"))
+                {
+                    SDL_OpenURL("https://github.com/UPC-GameEngines-BCN-2026/OsoEngine/issues");
+                }
+
+                if (ImGui::MenuItem("Download Latest"))
+                {
+                    SDL_OpenURL("https://github.com/UPC-GameEngines-BCN-2026/OsoEngine/releases");
+                }
+
+                if (ImGui::MenuItem("About"))
+                {
+                    showAbout = true;
+                }
+
+                ImGui::EndMenu();
+            }
+
+
+            ImGui::EndMainMenuBar();
+        }
+        if (showConfig)
+        {
+            ImGui::Begin("Configuration", &showConfig);
+
+            if (ImGui::CollapsingHeader("Application"))
+            {
+                ImGui::Text("OsoEngine");
+                ImGui::Text("Version 0.1.0");
+            }
+
+            if (ImGui::CollapsingHeader("Window"))
+            {
+                ImGui::Text("Width: 1280");
+                ImGui::Text("Height: 720");
+            }
+
+            if (ImGui::CollapsingHeader("Hardware Info"))
+            {
+                ImGui::Text("Hardware information");
+            }
+
+            ImGui::End();
+        }
+        if (showAbout)
+        {
+            ImGui::Begin("About OsoEngine", &showAbout);
+
+            ImGui::Text("OsoEngine");
+            ImGui::Text("Version 0.1.0");
+
+            ImGui::Separator();
+
+            ImGui::Text("Team:");
+            ImGui::BulletText("Sofia Liles");
+            ImGui::BulletText("Oscar Escofet");
+            ImGui::BulletText("David Castro");
+
+            ImGui::Separator();
+
+            ImGui::Text("Libraries:");
+            ImGui::BulletText("SDL3");
+            ImGui::BulletText("GLAD");
+            ImGui::BulletText("GLM");
+            ImGui::BulletText("ImGui");
+
+
+            ImGui::Separator();
+
+            ImGui::Text("License");
+            ImGui::Text("MIT License");
+
+            ImGui::End();
+        }
         glClearColor(
             0.1f,
             0.1f,
@@ -115,7 +219,7 @@ bool running = true;
 
         glClear(GL_COLOR_BUFFER_BIT);
 
-		// Render ImGui
+        // Render ImGui
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
@@ -123,6 +227,7 @@ bool running = true;
 
         SDL_Delay(16);
     }
+
 
     // Cleanup
     ImGui_ImplOpenGL3_Shutdown();
