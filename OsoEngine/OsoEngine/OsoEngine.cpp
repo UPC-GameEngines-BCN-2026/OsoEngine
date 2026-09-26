@@ -5,6 +5,7 @@
 #include <imgui.h>
 #include <imgui_impl_sdl3.h>
 #include <imgui_impl_opengl3.h>
+#include <vector>
 
 
 using namespace std;
@@ -90,6 +91,10 @@ int main()
     bool showConfig = true;
     bool showAbout = false;
 
+    // Variables for FPS calculation
+    std::vector<float> fpsHistory;
+    float maxFPS = 120.0f;
+
     while (running)
     {
         SDL_Event event;
@@ -108,6 +113,16 @@ int main()
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplSDL3_NewFrame();
         ImGui::NewFrame();
+
+        // Calculate FPS
+        float fps = io.Framerate;
+
+        fpsHistory.push_back(fps);
+
+        if (fpsHistory.size() > 100)
+        {
+            fpsHistory.erase(fpsHistory.begin());
+        }
         // Create a  menu bar
         if (ImGui::BeginMainMenuBar())
         {
@@ -164,7 +179,21 @@ int main()
             if (ImGui::CollapsingHeader("Application"))
             {
                 ImGui::Text("OsoEngine");
-                ImGui::Text("Version 0.1.0");
+                ImGui::Text(" UPC Game Engines BCN 2926");
+                ImGui::Text("Version: 0.1.0");
+
+                ImGui::SliderFloat("Max FPS", &maxFPS, 30.0f, 240.0f);
+                // Display FPS graph
+                ImGui::PlotHistogram(
+                    "FPS",
+                    fpsHistory.data(),
+                    (int)fpsHistory.size(),
+                    0,
+                    nullptr,
+                    0.0f,
+                    maxFPS,
+                    ImVec2(0, 100)
+                );
             }
 
             if (ImGui::CollapsingHeader("Window"))
@@ -227,7 +256,7 @@ int main()
 
         SDL_Delay(16);
     }
-
+    //sefasef
 
     // Cleanup
     ImGui_ImplOpenGL3_Shutdown();
